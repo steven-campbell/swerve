@@ -1,1 +1,105 @@
-<h1>Testing</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+  
+  <script src="index.js"></script>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+  <div class="page-header">
+    <h1>Instantaneous Swerve Wheel Vectors</h1>
+  </div>
+  <div class="col-md-4">
+    <h3>Results</h3>
+    <canvas id="swerve" width="200" height="240"></canvas>
+  </div>
+  <div class="col-md-4">
+    <h3>Inputs</h3>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Physical Robot Characteristics</h3>
+      </div>
+      <div class="panel-body">
+        Wheelbase:
+        <input id="wheelbase" class="form-control" type="number" min="1" value="30" />
+        <br> Trackwidth:
+        <input id="trackwidth" class="form-control" type="number" min="1" value="30" />
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Translational Movement</h3>
+      </div>
+      <div class="panel-body">
+        <canvas id="translational" width="100" height="100"></canvas>
+        <span id="transVector"></span>
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Rotational Movement</h3>
+      </div>
+      <div class="panel-body">
+        <input id="rotational" type="range" min="-1" max="1" step="0.01" value="0" />
+      </div>
+    </div>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Gyro Controls</h3>
+      </div>
+      <div class="panel-body">
+        <input id="gyro" type="range" min="0" max="360" step="1" value="0" />
+        <input id="gyroreset" class="btn btn-default" type="button" value="Reset Gyro" />
+        <div class="checkbox">
+          <label>
+            <input id="fieldOrient" type="checkbox" /> Field Oriented Drive
+          </label>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="col-md-4">
+    <h3>Technical Data</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Wheel #</th>
+          <th>Long Description</th>
+          <th>Wheel Speed</th>
+          <th>Wheel Angle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Front Right</td>
+          <td><span id="ws1"></span></td>
+          <td><span id="wa1"></span></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Front Left</td>
+          <td><span id="ws2"></span></td>
+          <td><span id="wa2"></span></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Rear Left</td>
+          <td><span id="ws3"></span></td>
+          <td><span id="wa3"></span></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Rear Right</td>
+          <td><span id="ws4"></span></td>
+          <td><span id="wa4"></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
